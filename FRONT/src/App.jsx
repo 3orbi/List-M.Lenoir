@@ -30,13 +30,25 @@ function App() {
   // Add new task
   const handleAddTask = async (taskData) => {
     try {
+      console.log('Adding task with data:', taskData)
+      console.log('API URL:', API_URL)
+
       const response = await fetch(`${API_URL}/api/tasks`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(taskData)
       })
-      if (!response.ok) throw new Error('Failed to add task')
+
+      console.log('Response status:', response.status)
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`Failed to add task: ${response.status} ${errorText}`)
+      }
+
       const newTask = await response.json()
+      console.log('New task received:', newTask)
+
       setTasks([newTask, ...tasks])
       setError(null)
     } catch (err) {
@@ -86,24 +98,28 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>📝 My Tasks</h1>
-        <p className="subtitle">Stay organized and productive</p>
+        <div className="header-content">
+          <h1>📝 My Tasks</h1>
+          <p className="subtitle">Stay organized and productive</p>
+        </div>
       </header>
 
       <main className="app-main">
-        {error && <div className="error-message">{error}</div>}
+        <div className="main-content">
+          {error && <div className="error-message">{error}</div>}
 
-        <TaskForm onAddTask={handleAddTask} />
+          <TaskForm onAddTask={handleAddTask} />
 
-        {loading ? (
-          <div className="loading">Loading tasks...</div>
-        ) : (
-          <TaskList
-            tasks={tasks}
-            onUpdateTask={handleUpdateTask}
-            onDeleteTask={handleDeleteTask}
-          />
-        )}
+          {loading ? (
+            <div className="loading">Loading tasks...</div>
+          ) : (
+            <TaskList
+              tasks={tasks}
+              onUpdateTask={handleUpdateTask}
+              onDeleteTask={handleDeleteTask}
+            />
+          )}
+        </div>
       </main>
     </div>
   )

@@ -2,28 +2,23 @@
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem;
 }
 
 .form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group:last-child {
   margin-bottom: 1.5rem;
 }
 
 .task-input,
 .task-textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 12px 16px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 16px;
   font-family: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 .task-input:focus,
@@ -35,20 +30,20 @@
 
 .task-textarea {
   resize: vertical;
-  min-height: 60px;
+  min-height: 80px;
 }
 
 .submit-btn {
   width: 100%;
-  padding: 0.75rem 1.5rem;
+  padding: 14px 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .submit-btn:hover:not(:disabled) {
@@ -59,4 +54,10 @@
 .submit-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .task-form {
+    padding: 1.5rem;
+  }
 }

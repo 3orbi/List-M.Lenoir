@@ -1,0 +1,24 @@
+{
+  "name": "todolist-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack TodoList application with Docker containerization",
+  "main": "index.js",
+  "scripts": {
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:restart": "docker-compose restart",
+    "docker:clean": "docker-compose down -v"
+  },
+  "keywords": [
+    "docker",
+    "todolist",
+    "fullstack",
+    "react",
+    "express",
+    "postgresql"
+  ],
+  "author": "",
+  "license": "MIT"
+}

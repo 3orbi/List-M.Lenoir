@@ -1,54 +1,54 @@
-# 📝 TodoList Application - Full Stack with Docker
+# 📝 Application TodoList - Full Stack avec Docker
 
-A complete full-stack todo list application demonstrating Docker containerization with React, Express.js, and PostgreSQL.
+Une application complète full-stack de liste de tâches démontrant la conteneurisation Docker avec React, Express.js et PostgreSQL.
 
-## ✨ Features
+## ✨ Fonctionnalités
 
-- ✅ Create, read, update, and delete tasks
-- ✅ Task descriptions and timestamps
-- ✅ Progress tracking visualization
-- ✅ Persistent data storage with PostgreSQL
-- ✅ RESTful API with Express.js
-- ✅ Modern React UI with Vite
-- ✅ Docker containerization with secure networking
-- ✅ Data persistence with Docker volumes
+- ✅ Créer, lire, mettre à jour et supprimer des tâches
+- ✅ Descriptions de tâches et horodatages
+- ✅ Visualisation du suivi de progression
+- ✅ Stockage de données persistant avec PostgreSQL
+- ✅ API RESTful avec Express.js
+- ✅ Interface utilisateur React moderne avec Vite
+- ✅ Conteneurisation Docker avec réseau sécurisé
+- ✅ Persistance des données avec les volumes Docker
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Technique
 
-| Component | Technology |
+| Composant | Technologie |
 |-----------|-----------|
 | Frontend | React 19 + Vite 7 |
 | Backend | Express.js 4.18 + Node.js 20 |
-| Database | PostgreSQL 16 |
-| Containerization | Docker + Docker Compose |
+| Base de données | PostgreSQL 16 |
+| Conteneurisation | Docker + Docker Compose |
 
-## 📋 Quick Links
+## 📋 Liens Rapides
 
-- **[Docker Setup Guide](./DOCKER_SETUP.md)** - Detailed instructions for building and deploying
-- **[API Documentation](./DOCKER_SETUP.md#-api-endpoints)** - Complete API endpoint reference
-- **[Troubleshooting](./DOCKER_SETUP.md#-troubleshooting)** - Common issues and solutions
+- **[Guide de Configuration Docker](./DOCKER_SETUP.md)** - Instructions détaillées pour la construction et le déploiement
+- **[Documentation API](./DOCKER_SETUP.md#-api-endpoints)** - Référence complète des points de terminaison API
+- **[Dépannage](./DOCKER_SETUP.md#-troubleshooting)** - Problèmes courants et solutions
 
-## 🚀 Getting Started
+## 🚀 Démarrage
 
-### Prerequisites
+### Prérequis
 
 - Docker (20.10+)
 - Docker Compose (1.29+)
 
-### Quick Start
+### Démarrage Rapide
 
 ```bash
-# 1. Clone repository
-git clone <your-repo-url>
+# 1. Cloner le dépôt
+git clone <votre-url-repo>
 cd list_lenoir
 
-# 2. Setup environment
+# 2. Configurer l'environnement
 cp .env.example .env
 
-# 3. Start application
+# 3. Démarrer l'application
 docker-compose up --build
 
-# 4. Open browser
+# 4. Ouvrir le navigateur
 # Frontend: http://localhost:5173
 # API: http://localhost:3001
 ```
@@ -68,53 +68,54 @@ docker-compose up --build
                               │
                       ┌──────────────┐
                       │  PostgreSQL  │
-                      │  (Database)  │
+                      │ (Base de     │
+                      │  données)    │
                       └──────────────┘
 ```
 
-### Network Configuration
+### Configuration Réseau
 
-- **frontend-network**: Frontend ↔ Backend communication
-- **backend-network**: Backend ↔ Database communication
-- **Isolation**: Frontend cannot directly access database
+- **frontend-network** : Communication Frontend ↔ Backend
+- **backend-network** : Communication Backend ↔ Base de données
+- **Isolation** : Le frontend ne peut pas accéder directement à la base de données
 
-### Volume Management
+### Gestion des Volumes
 
-- **postgres_data**: Persistent PostgreSQL data storage
-- Survives container restarts and removals
+- **postgres_data** : Stockage persistant des données PostgreSQL
+- Survit aux redémarrages et suppressions de conteneurs
 
-## 📂 Project Structure
+## 📂 Structure du Projet
 
 ```
 list_lenoir/
-├── backend/                           # Express API server
+├── backend/                           # Serveur API Express
 │   ├── Dockerfile
 │   ├── package.json
-│   ├── server.js                      # Main server file
+│   ├── server.js                      # Fichier serveur principal
 │   └── .dockerignore
 │
-├── list_lenoir/                       # Vite + React frontend
+├── list_lenoir/                       # Frontend Vite + React
 │   ├── Dockerfile
 │   ├── src/
-│   │   ├── components/               # React components
+│   │   ├── components/               # Composants React
 │   │   │   ├── TaskForm.jsx
 │   │   │   ├── TaskList.jsx
 │   │   │   └── TaskItem.jsx
-│   │   ├── App.jsx                   # Main app component
+│   │   ├── App.jsx                   # Composant principal
 │   │   ├── main.jsx
 │   │   └── *.css                     # Styles
 │   ├── package.json
 │   ├── vite.config.js
 │   └── .dockerignore
 │
-├── docker-compose.yml                 # Orchestration config
-├── .env.example                       # Environment template
+├── docker-compose.yml                 # Configuration d'orchestration
+├── .env.example                       # Modèle d'environnement
 ├── .gitignore
-├── DOCKER_SETUP.md                    # Detailed Docker guide
-└── README.md                          # This file
+├── DOCKER_SETUP.md                    # Guide Docker détaillé
+└── README.md                          # Ce fichier
 ```
 
-## 📊 Database Schema
+## 📊 Schéma de Base de Données
 
 ```sql
 CREATE TABLE tasks (
@@ -126,32 +127,32 @@ CREATE TABLE tasks (
 );
 ```
 
-## 🔌 API Endpoints
+## 🔌 Points de Terminaison API
 
-### Tasks
+### Tâches
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/tasks` | Get all tasks |
-| GET | `/api/tasks/:id` | Get single task |
-| POST | `/api/tasks` | Create new task |
-| PUT | `/api/tasks/:id` | Update task |
-| DELETE | `/api/tasks/:id` | Delete task |
-| GET | `/health` | Health check |
+| Méthode | Point de terminaison | Description |
+|---------|---------------------|-------------|
+| GET | `/api/tasks` | Obtenir toutes les tâches |
+| GET | `/api/tasks/:id` | Obtenir une tâche spécifique |
+| POST | `/api/tasks` | Créer une nouvelle tâche |
+| PUT | `/api/tasks/:id` | Mettre à jour une tâche |
+| DELETE | `/api/tasks/:id` | Supprimer une tâche |
+| GET | `/health` | Vérification de santé |
 
-## 💻 Usage Examples
+## 💻 Exemples d'Utilisation
 
-### Create a Task
+### Créer une Tâche
 ```bash
 curl -X POST http://localhost:3001/api/tasks \
   -H "Content-Type: application/json" \
   -d '{
-    "nom": "Buy groceries",
-    "description": "Milk, eggs, bread"
+    "nom": "Acheter des courses",
+    "description": "Lait, œufs, pain"
   }'
 ```
 
-### Update a Task
+### Mettre à Jour une Tâche
 ```bash
 curl -X PUT http://localhost:3001/api/tasks/1 \
   -H "Content-Type: application/json" \
@@ -160,154 +161,154 @@ curl -X PUT http://localhost:3001/api/tasks/1 \
   }'
 ```
 
-### View All Tasks
+### Voir Toutes les Tâches
 ```bash
 curl http://localhost:3001/api/tasks
 ```
 
-## 🐳 Docker Commands
+## 🐳 Commandes Docker
 
 ```bash
-# Build and start
+# Construire et démarrer
 docker-compose up --build
 
-# Start in background
+# Démarrer en arrière-plan
 docker-compose up -d
 
-# Stop services
+# Arrêter les services
 docker-compose stop
 
-# Remove containers
+# Supprimer les conteneurs
 docker-compose down
 
-# View logs
+# Voir les logs
 docker-compose logs -f [service]
 
-# Execute command
-docker-compose exec [service] [command]
+# Exécuter une commande
+docker-compose exec [service] [commande]
 ```
 
-## 🔒 Security
+## 🔒 Sécurité
 
-- Network isolation between frontend and database
-- Disabled RLS for development (enable in production)
-- Environment variables for sensitive data
-- CORS configured for API access
+- Isolation réseau entre le frontend et la base de données
+- RLS désactivé pour le développement (à activer en production)
+- Variables d'environnement pour les données sensibles
+- CORS configuré pour l'accès API
 
-## 📈 Monitoring
+## 📈 Surveillance
 
-### Check Service Status
+### Vérifier le Statut des Services
 ```bash
 docker-compose ps
 ```
 
-### View Logs
+### Voir les Logs
 ```bash
 docker-compose logs -f
 ```
 
-### Database Query
+### Requête Base de Données
 ```bash
 docker-compose exec postgres psql -U todouser -d todolist_db -c "SELECT * FROM tasks;"
 ```
 
-## 🌍 Environment Variables
+## 🌍 Variables d'Environnement
 
-| Variable | Purpose | Default |
-|----------|---------|---------|
-| VITE_API_URL | Frontend API endpoint | http://localhost:3001 |
-| BACKEND_PORT | Backend server port | 3001 |
-| FRONTEND_URL | Backend CORS origin | http://localhost:5173 |
-| DB_USER | PostgreSQL user | todouser |
-| DB_PASSWORD | PostgreSQL password | todopassword123 |
-| DB_NAME | Database name | todolist_db |
-| DB_HOST | Database hostname | postgres |
-| DB_PORT | Database port | 5432 |
+| Variable | Objectif | Valeur par défaut |
+|----------|----------|-------------------|
+| VITE_API_URL | Point de terminaison API du frontend | http://localhost:3001 |
+| BACKEND_PORT | Port du serveur backend | 3001 |
+| FRONTEND_URL | Origine CORS du backend | http://localhost:5173 |
+| DB_USER | Utilisateur PostgreSQL | todouser |
+| DB_PASSWORD | Mot de passe PostgreSQL | todopassword123 |
+| DB_NAME | Nom de la base de données | todolist_db |
+| DB_HOST | Nom d'hôte de la base de données | postgres |
+| DB_PORT | Port de la base de données | 5432 |
 
-## 📝 Development Workflow
+## 📝 Flux de Développement
 
-1. **Local Development** (without Docker)
+1. **Développement Local** (sans Docker)
    ```bash
    # Backend
    cd backend && npm install && npm start
 
-   # Frontend (in another terminal)
+   # Frontend (dans un autre terminal)
    cd list_lenoir && npm install && npm run dev
    ```
 
-2. **Docker Development**
+2. **Développement Docker**
    ```bash
    docker-compose up --build
    ```
 
-3. **Testing**
-   - Frontend: http://localhost:5173
-   - API: http://localhost:3001/api/tasks
+3. **Tests**
+   - Frontend : http://localhost:5173
+   - API : http://localhost:3001/api/tasks
 
-## 🚢 Deployment to Docker Hub
+## 🚢 Déploiement sur Docker Hub
 
 ```bash
-# Build images
+# Construire les images
 docker-compose build
 
-# Login and tag
+# Se connecter et taguer
 docker login
 docker tag list_lenoir_backend username/todolist-backend:1.0
 docker tag list_lenoir_frontend username/todolist-frontend:1.0
 
-# Push to registry
+# Pousser vers le registre
 docker push username/todolist-backend:1.0
 docker push username/todolist-frontend:1.0
 ```
 
-## 🐛 Troubleshooting
+## 🐛 Dépannage
 
-**Port conflicts?**
+**Conflits de ports ?**
 ```bash
-# Change ports in .env
+# Changer les ports dans .env
 BACKEND_PORT=3002
 DB_PORT=5433
 ```
 
-**Database not connecting?**
+**La base de données ne se connecte pas ?**
 ```bash
 docker-compose logs postgres
 docker-compose exec postgres pg_isready -U todouser
 ```
 
-**Frontend can't reach backend?**
+**Le frontend ne peut pas atteindre le backend ?**
 ```bash
 docker-compose exec frontend curl http://backend:3001/health
 ```
 
-See [DOCKER_SETUP.md](./DOCKER_SETUP.md#-troubleshooting) for more help.
+Voir [DOCKER_SETUP.md](./DOCKER_SETUP.md#-troubleshooting) pour plus d'aide.
 
-## 📚 Learning Resources
+## 📚 Ressources d'Apprentissage
 
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose Guide](https://docs.docker.com/compose/)
-- [Express.js API](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [PostgreSQL Manual](https://www.postgresql.org/docs/)
+- [Documentation Docker](https://docs.docker.com/)
+- [Guide Docker Compose](https://docs.docker.com/compose/)
+- [API Express.js](https://expressjs.com/)
+- [Documentation React](https://react.dev/)
+- [Manuel PostgreSQL](https://www.postgresql.org/docs/)
 
-## 📝 Project Assignment
+## 📝 Projet Académique
 
-This project fulfills requirements for:
-- Full-stack application containerization
-- Docker and Docker Compose orchestration
-- Multi-service networking and security
-- Data persistence with volumes
-- Complete documentation
+Ce projet répond aux exigences pour :
+- Conteneurisation d'application full-stack
+- Orchestration Docker et Docker Compose
+- Réseau multi-services et sécurité
+- Persistance des données avec volumes
+- Documentation complète
 
-## 📄 License
+## 📄 Licence
 
-MIT License - See LICENSE file for details
+Licence MIT - Voir le fichier LICENSE pour plus de détails
 
-## 👨‍💻 Author
+## 👨‍💻 Auteur
 
-Created for educational purposes - Docker containerization project
+Créé à des fins éducatives - Projet de conteneurisation Docker
 
 ---
 
-**Last Updated**: November 2024
-**Version**: 1.0.0
+**Dernière Mise à Jour** : Novembre 2024
+**Version** : 1.0.0

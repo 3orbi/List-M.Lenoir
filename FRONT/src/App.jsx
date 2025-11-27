@@ -99,7 +99,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="header-content">
-          <h1>📝 My Tasks</h1>
+          <h1>My Tasks</h1>
           <p className="subtitle">Stay organized and productive</p>
         </div>
       </header>

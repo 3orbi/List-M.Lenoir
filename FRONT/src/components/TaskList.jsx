@@ -5,7 +5,6 @@ export default function TaskList({ tasks, onUpdateTask, onDeleteTask }) {
   if (tasks.length === 0) {
     return (
       <div className="empty-state">
-        <p className="empty-icon">📋</p>
         <p className="empty-text">No tasks yet. Create one to get started!</p>
       </div>
     )

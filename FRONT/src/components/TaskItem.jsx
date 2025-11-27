@@ -126,7 +126,7 @@ export default function TaskItem({ task, onUpdateTask, onDeleteTask }) {
           className="edit-btn"
           title="Edit task"
         >
-          ✏️
+          Edit
         </button>
         <button
           onClick={handleDelete}
@@ -134,7 +134,7 @@ export default function TaskItem({ task, onUpdateTask, onDeleteTask }) {
           className="delete-btn"
           title="Delete task"
         >
-          🗑️
+          Delete
         </button>
       </div>
     </div>

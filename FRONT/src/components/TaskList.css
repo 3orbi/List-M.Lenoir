@@ -1,24 +1,10 @@
-.task-list-container {
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .task-stats {
   background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e8ed;
 }
 
 .task-stats p {
@@ -36,7 +22,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: #1a202c;
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -50,19 +36,15 @@
 .empty-state {
   background: white;
   padding: 3rem 2rem;
-  border-radius: 12px;
+  border-radius: 6px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.empty-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e8ed;
 }
 
 .empty-text {
-  color: #9ca3af;
-  font-size: 1.1rem;
+  color: #64748b;
+  font-size: 0.95rem;
   margin: 0;
 }
 

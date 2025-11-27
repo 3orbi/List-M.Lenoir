@@ -3,28 +3,31 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f5f7fa;
 }
 
 .app-header {
-  background: rgba(0, 0, 0, 0.15);
+  background: #ffffff;
   padding: 2rem 0;
   text-align: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e1e8ed;
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .app-header h1 {
-  color: white;
-  font-size: 2.5rem;
+  color: #1a202c;
+  font-size: 2rem;
   margin: 0 0 0.5rem 0;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
+  color: #64748b;
+  font-size: 0.95rem;
   margin: 0;
+  font-weight: 400;
 }
 
 .app-main {
@@ -52,8 +55,8 @@
 
 .loading {
   text-align: center;
-  color: white;
-  font-size: 1.1rem;
+  color: #64748b;
+  font-size: 1rem;
   padding: 2rem;
 }
 
